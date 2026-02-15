@@ -1,0 +1,28 @@
+# Rate Limiter Configuration
+# SMS Gateway Rate Limiting Rules
+
+[global]
+max_requests_per_second = 100
+max_requests_per_minute = 3000
+burst_size = 50
+
+[per_number]
+max_sms_per_hour = 30
+max_sms_per_day = 200
+cooldown_seconds = 2
+
+[per_destination]
+max_sms_per_number_per_hour = 5
+max_sms_per_number_per_day = 20
+duplicate_check_window = 3600
+
+[alerts]
+threshold_warning = 0.8
+threshold_critical = 0.95
+notify_email = "admin@example.com"
+notify_webhook = ""
+
+[retry]
+max_retries = 3
+backoff_base = 2
+backoff_max = 60
