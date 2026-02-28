@@ -1,0 +1,4 @@
+# Rate limit config - generated 2026-03-01
+[default]
+requests_per_minute = 60
+burst = 10
